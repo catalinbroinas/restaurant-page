@@ -127,6 +127,60 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+/* Menu */
+.menu {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+    gap: 3rem;
+}
+
+.menu .menu-desc {
+    text-align: center;
+    margin-top: 3rem;
+    max-width: 30%;
+}
+
+.menu .title {
+    font-size: 3rem;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: bold;
+    color: #FFD180;
+    margin: 0 0 1rem;
+}
+
+.menu .text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu .card-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.menu .card .card-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.menu .card .card-title {
+    margin: 1.5rem 0;
+    text-align: center;
+    font-size: 1.75rem;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: bold;
+}
+
+.menu .card .card-text {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    line-height: 1.75rem;
+}
+
 /* Footer */
 .footer {
     background-color: #ECEFF1;
