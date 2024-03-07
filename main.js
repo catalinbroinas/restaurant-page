@@ -2,6 +2,82 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/about.js":
+/*!**********************!*\
+  !*** ./src/about.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   displayAbout: () => (/* binding */ displayAbout)
+/* harmony export */ });
+function displayAbout() {
+    const createWrapper = () => {
+        const about = document.createElement('div');
+        about.classList.add('about');
+        about.setAttribute('id', 'about');
+
+        return about;
+    };
+
+    const createImage = () => {
+        const aboutImage = document.createElement('img');
+
+        aboutImage.setAttribute('alt', 'Restaurant');
+        aboutImage.setAttribute('src', './img/restaurant.jpg');
+        
+        return aboutImage;
+    };
+
+    const createDescription = () => {
+        const description = document.createElement('div');
+        const heading = document.createElement('h2');
+        const descText = document.createElement('p');
+        const contact = document.createElement('address');
+        const iconMap = document.createElement('i');
+        const iconMessage = document.createElement('i');
+        const address = document.createElement('p');
+        const email = document.createElement('p');
+
+        description.classList.add('about-content');
+        heading.classList.add('title');
+        descText.classList.add('text');
+        contact.classList.add('contact');
+        address.classList.add('text');
+        email.classList.add('text');
+        iconMap.classList.add('mdi', 'mdi-map-marker', 'about-icon');
+        iconMessage.classList.add('mdi', 'mdi-email', 'about-icon');
+
+        heading.textContent = 'Good food - good experience';
+        descText.textContent = `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae fugit ea possimus
+                        repellat tempore, sed ratione? Accusamus eligendi sint repellat a hic enim corporis, aliquid
+                        dolorum harum? Illum ea, aspernatur vitae vero aliquid iste sed aliquam deleniti eligendi atque`;
+
+        description.appendChild(heading);
+        description.appendChild(descText);
+        description.appendChild(contact);
+        contact.appendChild(address);
+        address.appendChild(iconMap);
+        address.insertAdjacentText('beforeend', 'Street Name, Oradea, Romania');
+        contact.appendChild(email);
+        email.appendChild(iconMessage);
+        email.insertAdjacentText('beforeend', 'catalinbroinas@yahoo.com');
+
+        return description;
+    };
+
+    return {
+        createWrapper,
+        createImage,
+        createDescription
+    };
+}
+
+
+
+/***/ }),
+
 /***/ "./src/home.js":
 /*!*********************!*\
   !*** ./src/home.js ***!
@@ -195,6 +271,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ "./src/home.js");
 /* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ "./src/menu.js");
+/* harmony import */ var _about__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./about */ "./src/about.js");
+
 
 
 
