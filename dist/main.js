@@ -276,6 +276,32 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+function UI() {
+    const pageContent = document.querySelector('#content');
+
+    const displayHomePage = () => {
+        if (pageContent.hasChildNodes()) {
+            while (pageContent.firstChild) {
+                pageContent.removeChild(pageContent.firstChild);
+            }
+        }
+
+        pageContent.appendChild((0,_home__WEBPACK_IMPORTED_MODULE_0__.displayHome)());
+    };
+
+    const displayInitialContent = () => {
+        pageContent.appendChild((0,_home__WEBPACK_IMPORTED_MODULE_0__.displayHome)());
+    }
+
+    return {
+        displayInitialContent
+    };
+}
+
+window.addEventListener('load', () => {
+    const ui = UI();
+    ui.displayInitialContent();
+});
 })();
 
 /******/ })()
