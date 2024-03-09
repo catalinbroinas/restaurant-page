@@ -32,7 +32,7 @@ function displayMenu() {
         return menuDesc;
     }
 
-    const createCard = (imageSrc, imageAlt, title, text) => {
+    const createCard = ({ imageSrc, imageAlt, title, text }) => {
         const card = document.createElement('div');
         const cardImage = document.createElement('img');
         const heading = document.createElement('h3');

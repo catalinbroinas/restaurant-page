@@ -171,7 +171,7 @@ function displayMenu() {
         return menuDesc;
     }
 
-    const createCard = (imageSrc, imageAlt, title, text) => {
+    const createCard = ({ imageSrc, imageAlt, title, text }) => {
         const card = document.createElement('div');
         const cardImage = document.createElement('img');
         const heading = document.createElement('h3');
@@ -300,6 +300,31 @@ function UI() {
         pageContent.appendChild((0,_home__WEBPACK_IMPORTED_MODULE_0__.displayHome)());
     };
 
+    const createMenuItem = (image, name, description) => {
+        return {
+            imageSrc: image,
+            imageAlt: name,
+            title: name,
+            text: description
+        };
+    };
+
+    const createMenu = () => {
+        const menuItems = [];
+
+        const spicyDesc = `Indulge in a tantalizing, fiery pizza experience 
+            with bold spices that awaken your taste buds, leaving you craving more of its zesty goodness`;
+        const spicyPizza = createMenuItem('spicyPizza.jpg', 'Spicy Pizza', spicyDesc);
+
+        const burgerDesc = `Succulent beef patty nestled in a toasted bun, layered with fresh lettuce,
+            juicy tomatoes, and savory condiments for a mouthwatering burger experience.`;
+        const beefBurger = createMenuItem('beefBurger.jpg', 'Beef Burger', burgerDesc);
+
+        menuItems.push(spicyPizza, beefBurger);
+
+        return menuItems;
+    };
+
     const displayAboutPage = () => {
         const about = (0,_about__WEBPACK_IMPORTED_MODULE_2__.displayAbout)();
         const aboutWrapper = about.createWrapper();
@@ -313,12 +338,38 @@ function UI() {
         aboutWrapper.appendChild(aboutDescription);
     };
 
+    const displayMenuPage = () => {
+        const menu = (0,_menu__WEBPACK_IMPORTED_MODULE_1__.displayMenu)();
+        const menuArray = createMenu();
+        const menuWrapper = menu.createWrapper();
+        const menuCardGroup = menu.createCardWrapper();
+
+        const descTitle = `Our Specialties`;
+        const descText = `Indulge in Flavorful Delights at Our Table`;
+
+        const menuDescription = menu.createDescription(descTitle, descText);
+
+        cleanPageContent();
+
+        pageContent.appendChild(menuWrapper);
+        menuWrapper.appendChild(menuDescription);
+        menuWrapper.appendChild(menuCardGroup);
+        
+        menuArray.forEach((item) => {
+            const card = menu.createCard(item);
+            menuCardGroup.appendChild(card);
+;        });
+    };
+
     const addEvents = () => {
         if (homeButton) {
             homeButton.addEventListener('click', displayHomePage);
         }
         if (aboutButton) {
             aboutButton.addEventListener('click', displayAboutPage);
+        }
+        if (menuButton) {
+            menuButton.addEventListener('click', displayMenuPage);
         }
     };
 
