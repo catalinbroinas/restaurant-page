@@ -282,12 +282,16 @@ function UI() {
     const menuButton = document.querySelector('#menu-btn');
     const aboutButton = document.querySelector('#about-btn');
 
-    const displayHomePage = () => {
+    const cleanPageContent = () => {
         if (pageContent.hasChildNodes()) {
             while (pageContent.firstChild) {
                 pageContent.removeChild(pageContent.firstChild);
             }
         }
+    };
+
+    const displayHomePage = () => {
+        cleanPageContent();
 
         pageContent.appendChild((0,_home__WEBPACK_IMPORTED_MODULE_0__.displayHome)());
     };
@@ -302,11 +306,7 @@ function UI() {
         const aboutImage = about.createImage();
         const aboutDescription = about.createDescription();
 
-        if (pageContent.hasChildNodes()) {
-            while (pageContent.firstChild) {
-                pageContent.removeChild(pageContent.firstChild);
-            }
-        }
+        cleanPageContent();
 
         pageContent.appendChild(aboutWrapper);
         aboutWrapper.appendChild(aboutImage);
