@@ -20,11 +20,31 @@ function UI() {
 
     const displayInitialContent = () => {
         pageContent.appendChild(displayHome());
-    }
+    };
+
+    const displayAboutPage = () => {
+        const about = displayAbout();
+        const aboutWrapper = about.createWrapper();
+        const aboutImage = about.createImage();
+        const aboutDescription = about.createDescription();
+
+        if (pageContent.hasChildNodes()) {
+            while (pageContent.firstChild) {
+                pageContent.removeChild(pageContent.firstChild);
+            }
+        }
+
+        pageContent.appendChild(aboutWrapper);
+        aboutWrapper.appendChild(aboutImage);
+        aboutWrapper.appendChild(aboutDescription);
+    };
 
     const addEvents = () => {
         if (homeButton) {
             homeButton.addEventListener('click', displayHomePage);
+        }
+        if (aboutButton) {
+            aboutButton.addEventListener('click', displayAboutPage);
         }
     };
 
