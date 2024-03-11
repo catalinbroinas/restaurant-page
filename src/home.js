@@ -17,7 +17,7 @@ function displayHome() {
     title.classList.add('title');
     button.setAttribute('type', 'button');
     button.setAttribute('id', 'view-menu-btn');
-    button.classList.add('btn-primary');
+    button.classList.add('btn', 'btn-primary');
 
     subTitle.textContent = 'Welcome to our restaurant!';
     titleSpan.textContent = 'Odin';

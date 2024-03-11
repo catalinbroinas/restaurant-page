@@ -107,7 +107,7 @@ function displayHome() {
     title.classList.add('title');
     button.setAttribute('type', 'button');
     button.setAttribute('id', 'view-menu-btn');
-    button.classList.add('btn-primary');
+    button.classList.add('btn', 'btn-primary');
 
     subTitle.textContent = 'Welcome to our restaurant!';
     titleSpan.textContent = 'Odin';
@@ -308,7 +308,8 @@ function UI() {
 
     const attachMenuButtonClickEvent = () => {
         const viewMenuButton = document.querySelector('#view-menu-btn');
-        viewMenuButton.addEventListener('click', () => {
+        viewMenuButton.addEventListener('click', (event) => {
+            rippleEffect(event.target);
             setTimeout(displayMenuPage, 500);
         });
     };
@@ -347,7 +348,7 @@ function UI() {
             juicy tomatoes, and savory condiments for a mouthwatering burger experience.`;
         const beefBurger = createMenuItem('beefBurger.jpg', 'Beef Burger', burgerDesc);
 
-        const soupDesc = `ISoup dumplings: Delicate parcels of dough filled with savory meat or vegetables,
+        const soupDesc = `Soup dumplings: Delicate parcels of dough filled with savory meat or vegetables,
             enveloping a burst of flavorful broth within, creating a delectable fusion of taste and texture.`;
         const soup = createMenuItem('soup.jpg', 'Soup Dumplings', soupDesc);
 
@@ -399,20 +400,44 @@ function UI() {
         });
     };
 
+    // Add ripple effect to buttons
+    const rippleEffect = (btn) => {
+        const ripple = document.createElement("span");
+
+        ripple.classList.add("ripple");
+
+        btn.appendChild(ripple);
+
+        // Get position of X
+        const x = btn.clientX - btn.offsetLeft;
+
+        // Get position of Y 
+        const y = btn.clientY - btn.offsetTop;
+
+        // Position the span element 
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+
+        // Remove span after 0.3s 
+        setTimeout(() => {
+            ripple.remove();
+        }, 300);
+    }
+
     const addEvents = () => {
         if (homeButton) {
             homeButton.addEventListener('click', () => {
-                setTimeout(displayHomePage, 500);
+                setTimeout(displayHomePage, 300);
             });
         }
         if (aboutButton) {
             aboutButton.addEventListener('click', () => {
-                setTimeout(displayAboutPage, 500);
+                setTimeout(displayAboutPage, 300);
             });
         }
         if (menuButton) {
             menuButton.addEventListener('click', () => {
-                setTimeout(displayMenuPage, 500);
+                setTimeout(displayMenuPage, 300);
             });
         }
     };

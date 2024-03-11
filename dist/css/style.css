@@ -112,6 +112,7 @@ body {
     font-weight: normal;
     color: #757575;
 }
+
 .home .sub-title::first-letter {
     text-transform: uppercase;
 }
@@ -284,15 +285,48 @@ body {
     font-weight: lighter;
 }
 
+/* Animation */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn span {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: ripple 1s;
+    opacity: 0;
+}
+
+/* Add animation */
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(10);
+    }
+}
+
 /* Large Devices */
 @media only screen and (max-width: 1355px) {
     .menu .menu-desc {
         max-width: 60%;
     }
+
     .about {
         align-content: start;
     }
 }
+
 /* Medium Devices */
 @media only screen and (max-width: 1014px) {
     .header {
@@ -300,10 +334,12 @@ body {
         flex-flow: column wrap;
         gap: 0rem;
     }
+
     .navbar-brand {
         padding: 1.5rem 0;
     }
 }
+
 @media only screen and (max-width: 758px) {
     .navbar {
         display: flex;
