@@ -16,13 +16,30 @@ function UI() {
         }
     };
 
+    const setActiveNavbarButton = (getActiveItem) => {
+        const navItems = document.querySelectorAll('.nav-item');
+        const setActiveItem = document.querySelector(`#${getActiveItem}`);
+
+        navItems.forEach((button) => {
+            if (button.classList.contains('active')) {
+                button.classList.remove('active');
+            }
+        });
+
+        if (setActiveItem) {
+            setActiveItem.classList.add('active');
+        }
+    };
+
     const displayHomePage = () => {
         cleanPageContent();
 
+        setActiveNavbarButton('home-btn');
         pageContent.appendChild(displayHome());
     };
 
     const displayInitialContent = () => {
+        setActiveNavbarButton('home-btn');
         pageContent.appendChild(displayHome());
     };
 
@@ -58,6 +75,7 @@ function UI() {
         const aboutDescription = about.createDescription();
 
         cleanPageContent();
+        setActiveNavbarButton('about-btn');
 
         pageContent.appendChild(aboutWrapper);
         aboutWrapper.appendChild(aboutImage);
@@ -76,6 +94,7 @@ function UI() {
         const menuDescription = menu.createDescription(descTitle, descText);
 
         cleanPageContent();
+        setActiveNavbarButton('menu-btn');
 
         pageContent.appendChild(menuWrapper);
         menuWrapper.appendChild(menuDescription);

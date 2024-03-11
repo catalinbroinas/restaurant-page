@@ -51,10 +51,12 @@ body {
     transition: border-bottom .3s ease;
 }
 
-.nav-item:hover {
-    border-bottom: 0.3rem solid #607D8B;
-}
 .nav-item.active {
+    border-bottom: 0.3rem solid rgba(96, 125, 139, 0.5);
+}
+
+.nav-item:hover,
+.nav-item.active:hover {
     border-bottom: 0.3rem solid #607D8B;
 }
 
