@@ -71,7 +71,8 @@ body {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 100%;
+    padding: 3rem;
 }
 
 .home .page-title {
@@ -134,12 +135,12 @@ body {
     display: grid;
     grid-template-rows: repeat(2, auto);
     justify-items: center;
+    padding: 3rem;
     gap: 3rem;
 }
 
 .menu .menu-desc {
     text-align: center;
-    margin-top: 3rem;
     max-width: 30%;
 }
 
@@ -196,7 +197,7 @@ body {
 }
 
 .about .about-image {
-    width: 640px;
+    max-width: 640px;
     flex-grow: 0;
     flex-shrink: 1;
 }
@@ -204,6 +205,7 @@ body {
 .about .about-content {
     width: 400px;
     flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .about .title {
@@ -252,4 +254,31 @@ body {
     padding: 1.5rem 0;
     font-size: 1rem;
     font-weight: lighter;
+}
+
+/* Large Devices */
+@media only screen and (max-width: 1355px) {
+    .menu .menu-desc {
+        max-width: 60%;
+    }
+    .about {
+        align-content: start;
+    }
+}
+/* Medium Devices */
+@media only screen and (max-width: 1014px) {
+    .header {
+        display: flex;
+        flex-flow: column wrap;
+        gap: 0rem;
+    }
+    .navbar-brand {
+        padding: 1.5rem 0;
+    }
+}
+@media only screen and (max-width: 758px) {
+    .navbar {
+        display: flex;
+        flex-flow: column wrap;
+    }
 }
