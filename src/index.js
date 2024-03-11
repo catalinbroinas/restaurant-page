@@ -33,7 +33,9 @@ function UI() {
 
     const attachMenuButtonClickEvent = () => {
         const viewMenuButton = document.querySelector('#view-menu-btn');
-        viewMenuButton.addEventListener('click', displayMenuPage);
+        viewMenuButton.addEventListener('click', () => {
+            setTimeout(displayMenuPage, 500);
+        });
     };
 
     const displayHomePage = () => {
@@ -124,13 +126,19 @@ function UI() {
 
     const addEvents = () => {
         if (homeButton) {
-            homeButton.addEventListener('click', displayHomePage);
+            homeButton.addEventListener('click', () => {
+                setTimeout(displayHomePage, 500);
+            });
         }
         if (aboutButton) {
-            aboutButton.addEventListener('click', displayAboutPage);
+            aboutButton.addEventListener('click', () => {
+                setTimeout(displayAboutPage, 500);
+            });
         }
         if (menuButton) {
-            menuButton.addEventListener('click', displayMenuPage);
+            menuButton.addEventListener('click', () => {
+                setTimeout(displayMenuPage, 500);
+            });
         }
     };
 

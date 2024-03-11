@@ -30,8 +30,8 @@ function displayAbout() {
         heading.classList.add('title');
         descText.classList.add('text');
         contact.classList.add('contact');
-        address.classList.add('text');
-        email.classList.add('text');
+        address.classList.add('text', 'address');
+        email.classList.add('text', 'email');
         iconMap.classList.add('mdi', 'mdi-map-marker', 'about-icon');
         iconMessage.classList.add('mdi', 'mdi-email', 'about-icon');
 
