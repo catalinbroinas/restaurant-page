@@ -98,6 +98,7 @@ body {
     font-size: 4rem;
     font-weight: bolder;
     font-family: "Roboto", Arial, sans-serif;
+    text-transform: capitalize;
 }
 
 .home .title span {
@@ -111,6 +112,9 @@ body {
     font-weight: normal;
     color: #757575;
 }
+.home .sub-title::first-letter {
+    text-transform: uppercase;
+}
 
 .btn-primary {
     cursor: pointer;
@@ -122,6 +126,7 @@ body {
     font-weight: bold;
     border: none;
     border-radius: 0.3rem;
+    text-transform: capitalize;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: box-shadow .3s ease;
 }
@@ -150,12 +155,17 @@ body {
     font-weight: bold;
     color: #FFD180;
     margin: 0 0 1rem;
+    text-transform: capitalize;
 }
 
 .menu .text {
     font-size: 1rem;
     line-height: 1.5rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu .text::first-letter {
+    text-transform: uppercase;
 }
 
 .menu .card-group {
@@ -175,6 +185,7 @@ body {
     font-size: 1.75rem;
     font-family: "Roboto", Arial, sans-serif;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 .menu .card .card-text {
@@ -182,6 +193,10 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1rem;
     line-height: 1.75rem;
+}
+
+.menu .card .card-text::first-letter {
+    text-transform: uppercase;
 }
 
 /* About */
@@ -222,12 +237,25 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.about .title::first-letter,
+.about .text::first-letter {
+    text-transform: uppercase;
+}
+
 .about .contact .text {
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
     color: #757575;
     margin: 0 0 0.5rem;
+}
+
+.about .contact .text.address {
+    text-transform: capitalize;
+}
+
+.about .contact .text.email {
+    text-transform: lowercase;
 }
 
 .about .about-img {
