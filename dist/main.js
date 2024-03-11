@@ -106,6 +106,7 @@ function displayHome() {
     logo.classList.add('logo');
     title.classList.add('title');
     button.setAttribute('type', 'button');
+    button.setAttribute('id', 'view-menu-btn');
     button.classList.add('btn-primary');
 
     subTitle.textContent = 'Welcome to our restaurant!';
@@ -305,16 +306,23 @@ function UI() {
         }
     };
 
+    const attachMenuButtonClickEvent = () => {
+        const viewMenuButton = document.querySelector('#view-menu-btn');
+        viewMenuButton.addEventListener('click', displayMenuPage);
+    };
+
     const displayHomePage = () => {
         cleanPageContent();
 
         setActiveNavbarButton('home-btn');
         pageContent.appendChild((0,_home__WEBPACK_IMPORTED_MODULE_0__.displayHome)());
+        attachMenuButtonClickEvent();
     };
 
     const displayInitialContent = () => {
         setActiveNavbarButton('home-btn');
         pageContent.appendChild((0,_home__WEBPACK_IMPORTED_MODULE_0__.displayHome)());
+        attachMenuButtonClickEvent();
     };
 
     const createMenuItem = (image, name, description) => {

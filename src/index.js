@@ -31,16 +31,23 @@ function UI() {
         }
     };
 
+    const attachMenuButtonClickEvent = () => {
+        const viewMenuButton = document.querySelector('#view-menu-btn');
+        viewMenuButton.addEventListener('click', displayMenuPage);
+    };
+
     const displayHomePage = () => {
         cleanPageContent();
 
         setActiveNavbarButton('home-btn');
         pageContent.appendChild(displayHome());
+        attachMenuButtonClickEvent();
     };
 
     const displayInitialContent = () => {
         setActiveNavbarButton('home-btn');
         pageContent.appendChild(displayHome());
+        attachMenuButtonClickEvent();
     };
 
     const createMenuItem = (image, name, description) => {

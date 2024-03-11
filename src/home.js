@@ -16,6 +16,7 @@ function displayHome() {
     logo.classList.add('logo');
     title.classList.add('title');
     button.setAttribute('type', 'button');
+    button.setAttribute('id', 'view-menu-btn');
     button.classList.add('btn-primary');
 
     subTitle.textContent = 'Welcome to our restaurant!';
