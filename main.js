@@ -345,7 +345,15 @@ function UI() {
             juicy tomatoes, and savory condiments for a mouthwatering burger experience.`;
         const beefBurger = createMenuItem('beefBurger.jpg', 'Beef Burger', burgerDesc);
 
-        menuItems.push(spicyPizza, beefBurger);
+        const soupDesc = `ISoup dumplings: Delicate parcels of dough filled with savory meat or vegetables,
+            enveloping a burst of flavorful broth within, creating a delectable fusion of taste and texture.`;
+        const soup = createMenuItem('soup.jpg', 'Soup Dumplings', soupDesc);
+
+        const breakfastDesc = `Breakfast nature: A wholesome morning meal comprised of fresh fruits, nuts,
+            seeds, and grains, providing a nutritious start to the day with natural flavors and vital nutrients.`;
+        const breakfast = createMenuItem('breakfast.jpg', 'Breakfast Nature', breakfastDesc);
+
+        menuItems.push(spicyPizza, beefBurger, soup, breakfast);
 
         return menuItems;
     };
@@ -381,11 +389,12 @@ function UI() {
         pageContent.appendChild(menuWrapper);
         menuWrapper.appendChild(menuDescription);
         menuWrapper.appendChild(menuCardGroup);
-        
+
         menuArray.forEach((item) => {
             const card = menu.createCard(item);
             menuCardGroup.appendChild(card);
-;        });
+            ;
+        });
     };
 
     const addEvents = () => {
