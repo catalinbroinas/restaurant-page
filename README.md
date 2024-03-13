@@ -7,3 +7,5 @@ Technologies used:
  * CSS
  * Javascript
  * Webpack 5
+
+<a href="https://catalinbroinas.github.io/restaurant-page/">Live Demo</a>
