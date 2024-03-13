@@ -96,6 +96,7 @@ function displayHome() {
     const logo = document.createElement('img');
     const title = document.createElement('h1');
     const titleSpan = document.createElement('span');
+    const buttonIcon = document.createElement('i');
 
     home.classList.add('home');
     home.setAttribute('id', 'home');
@@ -108,6 +109,7 @@ function displayHome() {
     button.setAttribute('type', 'button');
     button.setAttribute('id', 'view-menu-btn');
     button.classList.add('btn', 'btn-primary');
+    buttonIcon.classList.add('mdi', 'mdi-silverware', 'menu-icon');
 
     subTitle.textContent = 'Welcome to our restaurant!';
     titleSpan.textContent = 'Odin';
@@ -120,6 +122,7 @@ function displayHome() {
     title.appendChild(titleSpan);
     title.insertAdjacentText('beforeend', ' Restaurant');
     home.appendChild(button);
+    button.appendChild(buttonIcon);
 
     return home;
 }
@@ -422,22 +425,22 @@ function UI() {
         setTimeout(() => {
             ripple.remove();
         }, 300);
-    }
+    };
 
     const addEvents = () => {
         if (homeButton) {
             homeButton.addEventListener('click', () => {
-                setTimeout(displayHomePage, 300);
+                setTimeout(displayHomePage, 500);
             });
         }
         if (aboutButton) {
             aboutButton.addEventListener('click', () => {
-                setTimeout(displayAboutPage, 300);
+                setTimeout(displayAboutPage, 500);
             });
         }
         if (menuButton) {
             menuButton.addEventListener('click', () => {
-                setTimeout(displayMenuPage, 300);
+                setTimeout(displayMenuPage, 500);
             });
         }
     };
